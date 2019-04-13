@@ -1,0 +1,1 @@
+# Multilang_Translator_For_Pali_Tripitaka
