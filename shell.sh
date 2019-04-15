@@ -15,14 +15,14 @@ split -l 17997230 sample/sample.0.tgt.shuf
 mv xaa Data/0.tgt
 mv xab Data/0.tgt.val
 
+mkdir data
 python preprocess.py -train_src Data/0.src -train_tgt Data/0.tgt -valid_src Data/0.src.val -valid_tgt Data/0.tgt.val -save_data data/demo0 \
 	-src_seq_length 70 -tgt_seq_length 70 --src_vocab Data/vocab_del --tgt_vocab Data/vocab_del --share_vocab 
 
 # train translator
 cd OpenNMT-py
-mkdir data
 
-CUDA_VISIBLE_DEVICES=0 python  train.py -data data/demo0 -save_model demo0-model \
+CUDA_VISIBLE_DEVICES=0 python  train.py -data ../data/demo0 -save_model demo0-model \
         -layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8  \
         -encoder_type transformer -decoder_type transformer -position_encoding \
         -train_steps 200000  -max_generator_batches 2 -dropout 0.1 \
