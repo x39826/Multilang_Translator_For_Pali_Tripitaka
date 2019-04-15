@@ -18,13 +18,13 @@
 
 ## 多语言佛经翻译模型
 
-[巴利语大藏经平行语料](https://github.com/x39826/Pali_Tripitaka)
+我们使用了[巴利语大藏经平行语料](https://github.com/x39826/Pali_Tripitaka)训练了一个佛经机器翻译系统。
 
 这里使用的翻译系统是开源的神经网络机器翻译系统 [OpenNMT](http://opennmt.net/), 最初由哈佛大学NLP组开发，它集成许多最新的神经网络机器翻译模型与算法，用于 学术研究和工业开发，在翻译评测中表现非常优异。由于多语言翻译的需要，我们修改了OpenNMT的部分代码，并添加了一些新的模型功能，主要包括:
 
 1. 添加了新的模型输出模块[AdaSoftmaxGenerator](https://github.com/x39826/Multilang_Translator_For_Pali_Tripitaka/blob/master/OpenNMT_py/onmt/modules/AdaSoftmaxGenerator.py)，它是针对多语言翻译超大词表设计的一个树状Softmax输出层，可以节省模型训练时的运行内存和加快翻译时的解码速度。
 2. 添加了新的模型优化器[sparseadam](https://github.com/x39826/Multilang_Translator_For_Pali_Tripitaka/blob/master/OpenNMT_py/onmt/utils/optimizers.py)，它是一个多种优化算法的结合体，针对多语言翻译模型大词表问题，在模型不同部位的参数上使用不同的优化算法，以平衡优化算法的时间和物理资源开销。
-3. 添加了数据处理脚本[sample.py](https://github.com/x39826/Multilang_Translator_For_Pali_Tripitaka/blob/master/sample.py)，用于生成多语言翻译的训练数据和词表。修改了解码器模块[-trans_to]，实现了指定语言方向的翻译功能。
+3. 添加了数据处理脚本[sample.py](https://github.com/x39826/Multilang_Translator_For_Pali_Tripitaka/blob/master/sample.py)，用于生成多语言翻译的训练数据和词表。修改了解码器模块(添加翻译方向命令 ”-trans_to xxx“)，实现了指定语言方向的翻译功能。
 
 ## 翻译系统训练与测试
 **data preprocess and model training**
