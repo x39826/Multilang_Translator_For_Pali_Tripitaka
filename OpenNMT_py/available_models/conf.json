@@ -1,0 +1,20 @@
+{
+    "models_root": "./available_models",
+    "models": [
+        {
+            "id": 100,
+            "model": "demo0-model_step_40000.pt",
+            "timeout": 600,
+            "on_timeout": "to_cpu",
+            "load": true,
+            "opt": {
+                "gpu": 0,
+                "beam_size": 5
+            },
+            "tokenizer": {
+                "type": "multi-sentencepiece",
+                "model": "sp_model/"
+            }
+        }
+    ]
+}
