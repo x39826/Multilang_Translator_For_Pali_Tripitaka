@@ -1,5 +1,18 @@
 # 多语言巴利三藏翻译模型 Multilang_Translator_For_Pali_Tripitaka
 
+**data preprocess and model training**
+```
+sh shell.sh
+```
+**translate local files**
+```
+python test.py
+```
+**test translation API online **
+```
+python test_sever.py
+```
+
 ## 巴利三藏背景
 巴利文大藏经(Pāli Canon)，又作巴利三藏、南传大藏经，指锡兰上座部所传之佛教大藏经，用巴利文写成，为早期佛教经典的结集。在原始佛教分裂为部派佛教后，很多重要派别都拥有按照自己观点所编集的三藏，但在目前留存下来的藏经中只有南传上座部的巴利文三藏还可看到全貌，其余派别所编集的大部分都遗失了，只能在汉译佛经中可以找出它的蛛丝马迹。
 
