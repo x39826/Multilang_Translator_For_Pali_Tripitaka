@@ -1,5 +1,10 @@
 import glob
 import os
+import sys
+if len(sys.argv) != 2:
+        print('usage: python sample.py num_sample')
+        print(sys.argv)
+        exit(0)
 
 if not os.path.isdir('sample'):
     os.mkdir('sample')
@@ -50,7 +55,7 @@ exit(0)
 N= len(files) - 1
 
 idx = [i + 1 for i in range(N)]
-num_samples = 6
+num_samples = int(sys.argv[1])
 Fs = ['sample/sample.%d.src'%i for i in range(num_samples)]
 Ft = ['sample/sample.%d.tgt'%i for i in range(num_samples)]
 

@@ -3,7 +3,7 @@
     "models": [
         {
             "id": 100,
-            "model": "demo0-model_step_40000.pt",
+            "model": "demo0-model_step_50000.pt",
             "timeout": 600,
             "on_timeout": "to_cpu",
             "load": true,

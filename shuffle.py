@@ -2,7 +2,7 @@
 # -*- coding:utf8 -*-
 import sys
 if len(sys.argv) != 3:
-        print('usage: python gen_feature.py file_src file_tgt')
+        print('usage: python shuffle.py file_src file_tgt')
         print(sys.argv)
         exit(0)
 
@@ -15,6 +15,7 @@ o2 = open(sys.argv[2]+'.shuf', 'w')
 import numpy as np
 
 idx = np.random.permutation(len(f1))
+
 
 for i in idx:
         o1.write(f1[i])
