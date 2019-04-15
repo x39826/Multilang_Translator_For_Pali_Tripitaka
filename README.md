@@ -27,6 +27,10 @@
 3. 添加了数据采样脚本[sample.py](https://github.com/x39826/Multilang_Translator_For_Pali_Tripitaka/blob/master/sample.py)，用于生成多语言翻译的训练数据和词表，对N个包含L行的平行语料的采样大小仅为O(N*L)，有效去掉训练数据的冗余信息。修改了解码器模块(添加翻译方向命令 ”-trans_to xxx“)，实现了指定语言方向的翻译功能。
 
 ## 翻译系统训练与测试
+**install**
+```
+sh install.sh
+```
 **data preprocess and model training**
 ```
 sh shell.sh
